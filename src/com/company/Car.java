@@ -2,16 +2,19 @@ package com.company;
 import java.util.Scanner;
 public class Car {
 
+    private String brand;
     private int year;
     private String color;
     private String model;
     private int speed;
 
-    public Car(int year, String color, String model, int speed){
+    public Car(int year, String color, String model, int speed, String brand){
         this.year = year;
         this.color = color;
         this.model = model;
         this.speed = speed;
+        this.brand = brand;
+
     }
     public int getYear() {
         return year;
@@ -43,5 +46,12 @@ public class Car {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+
+    }public String getBrand() {
+        return brand;
+
+    } public void setBrand(String brand) {
+        this.brand = brand;
     }
 }
+
