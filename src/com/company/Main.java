@@ -75,21 +75,29 @@ public class Main {
                     System.out.println("you can decelerate pressing 2");
                     fre = input.nextInt();
                 }
-            } catch (InputMismatchException ime) {
-                System.out.println("please enter a number from 1 to 4!!");
-                fre = input.nextInt();
-            }
-
-        } while (fre >= 5 || fre <= 0);
-
-            Speed cars = new Speed(100,80,125,105,130,110,160,140);
+            Speed toyotaSpeed = new Speed("100","80");
+            Speed nissanSpeed = new Speed("125","105");
+            Speed chevroletSpeed = new Speed("130","110");
+            Speed ferrariSpeed = new Speed("160","140");
 
             if (fre == 1) {
-                System.out.print("your are accelerating: " + cars.getToyotaAceleration());
-
-            } else if (fre == 2){
-                System.out.print("you are decelerating: " + cars.getToyotaDeceleration());
+                System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour");
+                System.out.println("you are acelerating: " + nissanSpeed.getAcelerate() + " miles/hour");
+                System.out.println("you are acelerating: " + chevroletSpeed.getAcelerate() + " miles/hour");
+                System.out.println("you are acelerating: " + ferrariSpeed.getAcelerate() + " miles/hour");
+                fre = input.nextInt();
+            } else if (fre == 2) {
+                System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour");
+                System.out.println("you are decelerating: " + chevroletSpeed.getDecelerate() + " miles/hour");
+                System.out.println("you are decelerating: " + nissanSpeed.getDecelerate() + " miles/hour");
+                System.out.println("you are decelerating: " + toyotaSpeed.getDecelerate() + " miles/hour");
+                fre = input.nextInt();
+            }
+            }catch (InputMismatchException ime) {
+            System.out.println("please enter a valid number!!");
+            fre = input.nextInt();
+        }
+            }while (fre >= 5 || fre <= 0);
 
             }
     }
-}
