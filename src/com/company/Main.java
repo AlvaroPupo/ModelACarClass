@@ -10,10 +10,10 @@ public class Main {
         System.out.println("please pick a car from one of the following brands:");
         System.out.println("(enter 1 for toyota, enter 2 for chevrolet, enter 3 for nissan, enter 4 for ferrari)");
 
-        Car ferrari = new Car(2017, "red", "California T", 150, "ferrari");
-        Car nissan = new Car(2018, "silver", "frontier", 115, "nissan");
-        Car chevrolet = new Car(2018, "golden", "corvette", 120, "chevrolet");
-        Car toyota = new Car(2000, "purple", "land cruiser", 90, "toyota");
+        Gas ferrari = new Gas(2015, "golden", "California", 150, "ferrari", 100);
+        Gas nissan = new Gas(2016, "silver", "XTerra",120, "nissan", 100);
+        Gas chevrolet = new Gas(2017, "red", "Master", 110, "chevrolet", 100);
+        Gas toyota = new Gas(2018, "blue", "Star", 100, "toyota", 100);
         Scanner input = new Scanner(System.in);
 
         int fre;
@@ -29,8 +29,7 @@ public class Main {
                     System.out.println("model: " + toyota.getModel());
                     System.out.println("speed: " + toyota.getSpeed() + " miles/hour");
                     System.out.println();
-                    String toyota1 = "toyota";
-                    System.out.println("Ok, let's test your " + toyota1);
+                    System.out.println("Ok, let's test your " + toyota.getBrand() + " " + toyota.getModel() + " " + toyota.getColor() + " " + toyota.getYear() + " at a speed of " + toyota.getSpeed() + " miles/hour and with a gas tank filled at " + toyota.getGasoline() + "%");
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
@@ -42,8 +41,7 @@ public class Main {
                     System.out.println("model: " + chevrolet.getModel());
                     System.out.println("speed: " + chevrolet.getSpeed() + " miles/hour");
                     System.out.println();
-                    String chevrolet1 = "chevrolet";
-                    System.out.println("Ok, let's test your " + chevrolet1);
+                    System.out.println("Ok, let's test your " + chevrolet.getBrand() + " " + chevrolet.getModel() + " " + chevrolet.getColor() + " " + chevrolet.getYear() + " at a speed of " + chevrolet.getSpeed() + " miles/hour and with a gas tank filled at " + chevrolet.getGasoline() + "%");
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
@@ -55,8 +53,7 @@ public class Main {
                     System.out.println("model: " + nissan.getModel());
                     System.out.println("speed: " + nissan.getSpeed() + " miles/hour");
                     System.out.println();
-                    String nissan1 = "nissan";
-                    System.out.println("Ok, let's test your " + nissan1);
+                    System.out.println("Ok, let's test your " + nissan.getBrand() + " " + nissan.getModel() + " " + nissan.getColor() + " " + nissan.getYear() + " at a speed of " + nissan.getSpeed() + " miles/hour and with a gas tank filled at " + nissan.getGasoline() + "%");
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
@@ -68,8 +65,7 @@ public class Main {
                     System.out.println("model: " + ferrari.getModel());
                     System.out.println("speed: " + ferrari.getSpeed() + " miles/hour");
                     System.out.println();
-                    String ferrari1 = "ferrari";
-                    System.out.println("Ok, let's test your " + ferrari1);
+                    System.out.println("Ok, let's test your " + ferrari.getBrand() + " " + ferrari.getModel() + " " + ferrari.getColor() + " " + ferrari.getYear() + " at a speed of " + ferrari.getSpeed() + " miles/hour and with a gas tank filled at " + ferrari.getGasoline() + "%");
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
@@ -80,18 +76,33 @@ public class Main {
             Speed chevroletSpeed = new Speed("130","110");
             Speed ferrariSpeed = new Speed("160","140");
 
+            for (int user = 0; user <= 5; user++){
+
+                switch (input.nextInt()) {
+                    case 1:
+                        toyota.setGasoline(toyota.getGasoline() + 1);
+                        break;
+                    case 2:
+                        nissan.setGasoline(nissan.getGasoline() - 1);
+                        break;
+                    default:
+                        System.out.println("Please enter 1 or 2");
+                        break;
+                }
+
             if (fre == 1) {
-                System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour");
+                System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour and ");
                 System.out.println("you are acelerating: " + nissanSpeed.getAcelerate() + " miles/hour");
                 System.out.println("you are acelerating: " + chevroletSpeed.getAcelerate() + " miles/hour");
                 System.out.println("you are acelerating: " + ferrariSpeed.getAcelerate() + " miles/hour");
                 fre = input.nextInt();
             } else if (fre == 2) {
-                System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour");
+                System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour and ");
                 System.out.println("you are decelerating: " + chevroletSpeed.getDecelerate() + " miles/hour");
                 System.out.println("you are decelerating: " + nissanSpeed.getDecelerate() + " miles/hour");
                 System.out.println("you are decelerating: " + toyotaSpeed.getDecelerate() + " miles/hour");
                 fre = input.nextInt();
+            }
             }
             }catch (InputMismatchException ime) {
             System.out.println("please enter a valid number!!");
