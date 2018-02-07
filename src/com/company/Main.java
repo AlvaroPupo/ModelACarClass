@@ -11,7 +11,7 @@ public class Main {
         System.out.println("(enter 1 for toyota, enter 2 for chevrolet, enter 3 for nissan, enter 4 for ferrari)");
 
         Gas ferrari = new Gas(2015, "golden", "California", 150, "ferrari", 100);
-        Gas nissan = new Gas(2016, "silver", "XTerra",120, "nissan", 100);
+        Gas nissan = new Gas(2016, "silver", "XTerra", 120, "nissan", 100);
         Gas chevrolet = new Gas(2017, "red", "Master", 110, "chevrolet", 100);
         Gas toyota = new Gas(2018, "blue", "Star", 100, "toyota", 100);
         Scanner input = new Scanner(System.in);
@@ -19,7 +19,8 @@ public class Main {
         int fre;
         do {
 
-            try { System.out.println("Please enter a number from 1 to 4!!");
+            try {
+                System.out.println("Please enter a number from 1 to 4!!");
                 fre = input.nextInt();
 
                 if (fre == 1) {
@@ -33,7 +34,7 @@ public class Main {
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
-                    fre = input.nextInt();
+
                 } else if (fre == 2) {
                     System.out.println("brand: " + chevrolet.getBrand());
                     System.out.println("year: " + chevrolet.getYear());
@@ -45,7 +46,7 @@ public class Main {
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
-                    fre = input.nextInt();
+
                 } else if (fre == 3) {
                     System.out.println("brand: " + nissan.getBrand());
                     System.out.println("year: " + nissan.getYear());
@@ -57,7 +58,7 @@ public class Main {
                     System.out.println();
                     System.out.println("you can accelerate pressing 1");
                     System.out.println("you can decelerate pressing 2");
-                    fre = input.nextInt();
+
                 } else if (fre == 4) {
                     System.out.println("brand: " + ferrari.getBrand());
                     System.out.println("year: " + ferrari.getYear());
@@ -67,48 +68,72 @@ public class Main {
                     System.out.println();
                     System.out.println("Ok, let's test your " + ferrari.getBrand() + " " + ferrari.getModel() + " " + ferrari.getColor() + " " + ferrari.getYear() + " at a speed of " + ferrari.getSpeed() + " miles/hour and with a gas tank filled at " + ferrari.getGasoline() + "%");
                     System.out.println();
-                    System.out.println("you can accelerate pressing 1");
-                    System.out.println("you can decelerate pressing 2");
+                    System.out.println("you can accelerate by pressing 1");
+                    System.out.println("you can decelerate by pressing 2");
+
+                }
+                Speed toyotaSpeed = new Speed("100", "80");
+                Speed nissanSpeed = new Speed("125", "105");
+                Speed chevroletSpeed = new Speed("130", "110");
+                Speed ferrariSpeed = new Speed("160", "140");
+
+//            for (int user = 1; user <= 5; user++) {
+////
+////                switch (input.nextInt()) {
+////                    case 1:
+////                toyota.setGasoline(toyota.getGasoline() + 1);
+//////                        break;
+//////                    case 2:
+////                nissan.setGasoline(nissan.getGasoline() - 1);
+////                        break;
+////                    default:
+////                        System.out.println("Please enter 1 or 2");
+////                        break;
+//            }
+                fre = input.nextInt();
+
+                if (fre == 1) {
+                    System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 1) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + nissanSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 2) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + chevroletSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 3) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + ferrariSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 4) + "% of gasoline.");
+                    System.out.println();
+
+                } else if (fre == 2) {
+                    System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 1) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + chevroletSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 2) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + nissanSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 3) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + toyotaSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 4) + "% of gasoline.");
+                    System.out.println();
+                }
+
+                System.out.println("you can accelerate by pressing 1 \nyou can decelerate by pressing 2 \nyou can refill gas by pressing 3");
+                fre = input.nextInt();
+                if (fre == 1) {
+                    System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 5) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + nissanSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 6) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + chevroletSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 7) + "% of gasoline.");
+                    System.out.println("you are acelerating: " + ferrariSpeed.getAcelerate() + " miles/hour and " + (toyota.getGasoline() - 8) + "% of gasoline.");
+                    fre = input.nextInt();
+
+                } else if (fre == 2) {
+                    System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 5) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + chevroletSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 6) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + nissanSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 7) + "% of gasoline.");
+                    System.out.println("you are decelerating: " + toyotaSpeed.getDecelerate() + " miles/hour and " + (toyota.getGasoline() - 8) + "% of gasoline.");
+                    fre = input.nextInt();
+
+                } else if (fre == 3); {
+                    System.out.println("You are refilling: " + (toyota.getGasoline() - 3) + "%");
+                    System.out.println("you are refilling: " + (toyota.getGasoline() - 2) + "%");
+                    System.out.println("you are refilling: " + (toyota.getGasoline() - 1) + "%");
+                    System.out.println("you are refilling: " + toyota.getGasoline() + "%");
+                }
+                }catch(InputMismatchException ime){
+                    System.out.println("please enter a valid number!!");
                     fre = input.nextInt();
                 }
-            Speed toyotaSpeed = new Speed("100","80");
-            Speed nissanSpeed = new Speed("125","105");
-            Speed chevroletSpeed = new Speed("130","110");
-            Speed ferrariSpeed = new Speed("160","140");
+            } while (fre >= 5 || fre <= 0) ;
 
-            for (int user = 0; user <= 5; user++){
-
-                switch (input.nextInt()) {
-                    case 1:
-                        toyota.setGasoline(toyota.getGasoline() + 1);
-                        break;
-                    case 2:
-                        nissan.setGasoline(nissan.getGasoline() - 1);
-                        break;
-                    default:
-                        System.out.println("Please enter 1 or 2");
-                        break;
-                }
-
-            if (fre == 1) {
-                System.out.println("you are acelerating: " + toyotaSpeed.getAcelerate() + " miles/hour and ");
-                System.out.println("you are acelerating: " + nissanSpeed.getAcelerate() + " miles/hour");
-                System.out.println("you are acelerating: " + chevroletSpeed.getAcelerate() + " miles/hour");
-                System.out.println("you are acelerating: " + ferrariSpeed.getAcelerate() + " miles/hour");
-                fre = input.nextInt();
-            } else if (fre == 2) {
-                System.out.println("you are decelerating: " + ferrariSpeed.getDecelerate() + " miles/hour and ");
-                System.out.println("you are decelerating: " + chevroletSpeed.getDecelerate() + " miles/hour");
-                System.out.println("you are decelerating: " + nissanSpeed.getDecelerate() + " miles/hour");
-                System.out.println("you are decelerating: " + toyotaSpeed.getDecelerate() + " miles/hour");
-                fre = input.nextInt();
-            }
-            }
-            }catch (InputMismatchException ime) {
-            System.out.println("please enter a valid number!!");
-            fre = input.nextInt();
         }
-            }while (fre >= 5 || fre <= 0);
-
-            }
-    }
+}
